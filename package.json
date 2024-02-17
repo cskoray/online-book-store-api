@@ -1,0 +1,31 @@
+{
+  "name": "online-book-store-api",
+  "version": "1.0.0",
+  "description": "The Bookstore API is designed to help manage a bookstore's user registration, book inventory, and order processing. It provides a RESTful API for creating users, listing books, and managing orders.",
+  "main": "index.js",
+  "scripts": {
+    "seed": "node seed.js",
+    "test": "NODE_ENV=test jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Koray Kaya",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb-memory-server": "^9.1.6",
+    "mongoose": "^8.1.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongoose-seed": "^0.6.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^6.3.4"
+  }
+}

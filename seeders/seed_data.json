@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "email": "his@email2.com",
+      "password": "password123",
+      "address": "somewhere in the world",
+      "phone": "+1234567890",
+      "paymentCard": {
+        "cardNumber": "1111222233334444",
+        "expirationDate": "12/24",
+        "cvv": "123"
+      }
+    }
+  ],
+
+  "books": [
+    {
+      "title": "Book 1",
+      "author": "Author 1",
+      "price": 20
+    },
+    {
+      "title": "Book 2",
+      "author": "Author 2",
+      "price": 25
+    }
+  ]
+}
