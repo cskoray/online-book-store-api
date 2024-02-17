@@ -37,6 +37,28 @@ describe("User Controller", () => {
     expect(res.body).toHaveProperty("email", "some@email.com");
   });
 
+  test("POST /api/users/register - should handle missing field during register a new user", async () => {
+    const userData = {
+      email: "some@email.com",
+      password: "password123",
+      address: "some address",
+      phone: "+1234567890",
+      paymentCard: {
+        cardNumber: "1111222233334444",
+        expirationDate: "12/24",
+        cvv: "123",
+      },
+    };
+
+    const res = await request(app).post("/api/users/register").send(userData);
+
+    expect(res.statusCode).toBe(400);
+    expect(res.body).toHaveProperty(
+      "message",
+      "User validation failed: name: Path `name` is required."
+    );
+  });
+
   test("POST /api/users/register - should handle duplicate email registration", async () => {
     const userData = {
       name: "John Doe",
