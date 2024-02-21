@@ -6,7 +6,7 @@ mongoose.set("strictQuery", false);
 
 let mongod = null;
 
-const connectDB = async (callback) => {
+const connectDB = async () => {
   try {
     let dbUrl = `${MONGODB_URI}/bookstore`;
     if (process.env.NODE_ENV === "test") {
@@ -14,10 +14,8 @@ const connectDB = async (callback) => {
       dbUrl = mongod.getUri();
     }
     const conn = await mongoose.connect(dbUrl);
-    if (typeof callback === "function") {
-      callback();
-    }
     console.log(`MongoDB connected: ${conn.connection.host}`);
+    return conn;
   } catch (err) {
     console.log(err);
     process.exit(1);
